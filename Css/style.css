@@ -5,9 +5,13 @@
           box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
 body {
   font-family: "Open Sans", Arial, sans-serif;
-  font-size: 16px;
 }
 
 .contenedor {
@@ -27,26 +31,56 @@ header {
 
 header .contenedor {
   position: relative;
-  height: 700px;
+  height: 43.75rem;
 }
 
-header .menu {
+header nav {
   width: 100%;
   text-align: right;
 }
 
-header .menu a {
+header nav ul li {
+  display: inline-block;
+  margin: 40px 20px;
+}
+
+header nav ul li a {
   color: #ffffff;
   font-size: 20px;
   font-weight: 300;
-  display: inline-block;
-  margin: 40px 20px;
   text-decoration: none;
   position: relative;
 }
 
-header .menu a:hover {
-  text-decoration: underline;
+header nav ul li a::after {
+  background: transparent;
+  bottom: 0;
+  content: "";
+  height: .125rem;
+  left: 50%;
+  position: absolute;
+  background: #fff;
+  -webkit-transition: width 0.3s ease 0s, left 0.3s ease 0s;
+  transition: width 0.3s ease 0s, left 0.3s ease 0s;
+  width: 0;
+}
+
+header nav ul li a:hover::after {
+  width: 100%;
+  left: 0;
+}
+
+header .checkbtn {
+  font-size: 30px;
+  color: #fff;
+  float: right;
+  line-height: 5rem;
+  margin-right: 2.5rem;
+  cursor: pointer;
+}
+
+header #check, header .checkbtn {
+  display: none;
 }
 
 header .textos {
@@ -58,7 +92,7 @@ header .textos {
 }
 
 header .textos .nombre {
-  font-size: 50px;
+  font-size: 3.125rem;
   font-weight: 600;
 }
 
@@ -68,7 +102,7 @@ header .textos .nombre span {
 
 header .textos h3 {
   font-weight: 300;
-  font-size: 25px;
+  font-size: 1.5625rem;
   font-style: italic;
 }
 
@@ -88,8 +122,8 @@ main .acerca-de .foto {
   left: 0;
   top: -60px;
   z-index: 0;
-  -webkit-box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.35);
-          box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.35);
+  -webkit-box-shadow: 14px 14px 23px -11px rgba(0, 0, 0, 0.45);
+          box-shadow: 14px 14px 23px -11px rgba(0, 0, 0, 0.45);
 }
 
 main .acerca-de .foto img {
@@ -101,27 +135,27 @@ main .acerca-de article {
   background: #ffffff;
   padding: 40px;
   width: 50%;
-  position: relative;
-  top: 520px;
+  position: absolute;
+  top: 220px;
+  right: 0;
   z-index: 1;
-  float: right;
-  -webkit-box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.35);
-          box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.35);
+  -webkit-box-shadow: 14px 14px 23px -11px rgba(0, 0, 0, 0.45);
+          box-shadow: 14px 14px 23px -11px rgba(0, 0, 0, 0.45);
 }
 
 main .acerca-de article h3 {
-  font-size: 50px;
+  font-size: 3.125rem;
   font-weight: 300;
   margin-bottom: 40px;
 }
 
 main .acerca-de article p {
-  line-height: 28px;
+  line-height: 1.75rem;
   margin-bottom: 15px;
 }
 
 main .menu .titulo {
-  font-size: 40px;
+  font-size: 2.5rem;
   font-weight: 300;
   text-align: center;
   margin-bottom: 40px;
@@ -129,7 +163,7 @@ main .menu .titulo {
 
 main .menu {
   padding-top: 600px;
-  margin-bottom: 50px;
+  margin-bottom: 100px;
 }
 
 main .menu .contenedor-menu, main .menu .contenedor-menu2 {
@@ -153,61 +187,73 @@ main .menu .platillo {
 }
 
 main .menu .nombre {
-  font-size: 20px;
+  font-size: 1.25rem;
   margin-bottom: 15px;
   float: left;
 }
 
 main .menu .precio {
-  font-size: 20px;
-  margin-bottom: 15px;
+  font-size: 1.25rem;
+  margin-bottom: .9375rem;
   float: right;
 }
 
 main .menu .descripcion {
-  font-size: 16px;
+  font-size: 1rem;
   color: #676767;
   clear: both;
 }
 
-.carousel__contenedor {
+.carousel {
+  margin-bottom: 100px;
+}
+
+.carousel .contenedor {
   width: 90%;
   margin: auto;
   position: relative;
 }
 
-.carousel__contenedor .carousel__galeria {
-  width: 60vw;
+.carousel .carousel__galeria {
+  width: 80%;
   overflow: hidden;
 }
 
-.carousel__contenedor .carousel__galeria .carousel__foto {
+.carousel .carousel__galeria .carousel__foto {
   margin: 5px;
 }
 
-.carousel__contenedor .carousel__galeria img {
+.carousel .carousel__galeria img {
   border-radius: 5px;
 }
 
-.carousel__contenedor .carousel__anterior,
-.carousel__contenedor .carousel__siguiente {
+.carousel .carousel__anterior,
+.carousel .carousel__siguiente {
   position: absolute;
   display: block;
-  padding: 10px 15px;
-  font-size: 1.25rem;
-  border-radius: 100px;
+  font-size: 2.25rem;
+  border: none;
   background: none;
   top: calc(50% - 25px);
   text-align: center;
+  color: #a89cc8;
   opacity: 20%;
+  z-index: 1;
 }
 
-.carousel__contenedor .carousel__anterior {
-  left: 10.375rem;
+.carousel .carousel__anterior:hover,
+.carousel .carousel__siguiente:hover {
+  opacity: 100%;
+  -webkit-transition: .3s;
+  transition: .3s;
 }
 
-.carousel__contenedor .carousel__siguiente {
-  right: 10.375rem;
+.carousel .carousel__anterior {
+  left: 0px;
+}
+
+.carousel .carousel__siguiente {
+  right: 0px;
 }
 
 main .contacto {
@@ -217,50 +263,33 @@ main .contacto {
   padding: 30px 0;
 }
 
-main .contacto .contenedor {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-}
-
 main .contacto a {
   color: #ffffff;
-  padding: 15px 0;
-  width: 120px;
+  padding: 20px 30px;
+  width: auto 20px;
   text-align: center;
   display: inline-block;
   border-radius: 3px;
-  font-size: 30px;
+  font-size: 1.875rem;
   margin: 0 20px;
+  -webkit-transition: all .3s;
+  transition: all .3s;
 }
 
 main .contacto p {
   color: #ffffff;
   padding: 15px 0;
-  width: 120px;
   text-align: center;
-  display: inline-block;
-  border-radius: 3px;
-  font-size: 20px;
-  margin: 0 20px;
-  display: inline-block;
-}
-
-main .contacto p span {
-  font-size: 15px;
+  display: block;
+  font-size: 1.25rem;
 }
 
 main .contacto .facebook:hover {
-  background: #3b5998;
-  color: #ffffff;
+  background-color: #3b5998;
 }
 
 main .contacto .instagram:hover {
-  background: #e1306c;
-  color: #ffffff;
+  background-color: #e1306c;
 }
 
 footer {
@@ -272,39 +301,69 @@ footer .copyright {
   padding: 10px 0;
   color: #ffffff;
   font-weight: 300;
-  font-size: 10px;
+  font-size: .625rem;
 }
 
 @media screen and (max-width: 50rem) {
+  header {
+    background-attachment: scroll;
+  }
   header .contenedor {
     position: static;
-    height: auto;
+    height: 60vh;
+  }
+  header .contenedor nav {
+    position: fixed;
+    z-index: 2;
+  }
+  header .contenedor nav .checkbtn {
+    display: block;
+    position: relative;
+    z-index: 3;
+  }
+  header .contenedor nav ul {
+    position: absolute;
+    width: 50vw;
+    padding-top: 2rem;
+    height: 100vh;
+    right: -100%;
+    background-color: #56330f;
+    text-align: center;
+    -webkit-transition: all .5s;
+    transition: all .5s;
+  }
+  header .contenedor nav ul li {
+    display: block;
+    margin: 3.125rem;
+    line-height: 1.875em;
+    font-size: 1.25rem;
+  }
+  header .contenedor nav ul li a {
+    font-size: 1.25rem;
+  }
+  header .contenedor nav #check:checked ~ ul {
+    right: 0;
   }
   header .textos {
     position: static;
     margin: 100px 0;
   }
   header .textos .nombre {
-    font-size: 1.875rem;
+    font-size: 2.875rem;
   }
   header .textos h3 {
-    font-size: 18px;
+    font-size: 1.125rem;
   }
-  header .menu {
-    text-align: center;
-  }
-  header .menu a {
-    margin: 10px 20px;
+  main .acerca-de .foto {
+    margin-top: 100px;
+    width: 100%;
   }
   main .acerca-de .contenedor article {
     position: relative;
     width: 100%;
-    top: -50px;
-    -webkit-transform: translate(0px, 0);
-            transform: translate(0px, 0);
   }
   main .menu {
-    padding-top: 18.75rem;
+    padding-top: 300px;
   }
   main .menu article {
     width: 100%;
@@ -324,8 +383,8 @@ footer .copyright {
 }
 
 @media screen and (max-width: 25rem) {
-  header .menu a {
-    margin: 11px;
+  header .contenedor nav ul {
+    width: 60vw;
   }
   main .acerca-de article h3 {
     font-size: 2.125rem;

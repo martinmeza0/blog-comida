@@ -1,29 +1,53 @@
-@media screen and (max-width: 50rem)
+@media screen and (max-width: 50rem) //800px
     header
+        background-attachment: scroll
         .contenedor
             position: static
-            height: auto
+            height: 60vh
+            nav
+                position: fixed
+                z-index: 2
+                .checkbtn
+                    display: block
+                    position: relative
+                    z-index: 3
+                ul               
+                    position: absolute
+                    width: 50vw
+                    padding-top: 2rem
+                    height: 100vh
+                    right: -100%
+                    background-color:#56330f 
+                    text-align: center
+                    transition: all .5s
+                    li
+                        display: block
+                        margin: 3.125rem 
+                        line-height: 1.875em
+                        font-size: 1.25rem
+                        a   
+                            font-size: 1.25rem
+                #check:checked ~ ul
+                    right: 0
         .textos
             position: static
             margin: 100px 0
             .nombre
-                font-size: 1.875rem
+                font-size: 2.875rem
             h3
-                font-size: 18px
-        .menu
-            text-align: center
-            a 
-                margin: 10px 20px
+                font-size: 1.125rem
+
     main
         .acerca-de
+            .foto 
+                margin-top: 100px
+                width: 100%
             .contenedor
                 article
                     position: relative
                     width: 100%
-                    top: -50px
-                    transform: translate(0px, 0)
         .menu
-            padding-top: 18.75rem
+            padding-top: 300px
             article
                 width: 100%
         .carousel__contenedor
@@ -35,11 +59,13 @@
             .carousel__siguiente 
                 right: 0px
 
+//400px
 @media screen and (max-width: 25rem)
     header
-        .menu
-            a 
-                margin: 11px
+        .contenedor
+            nav
+                ul
+                    width: 60vw
     main
         .acerca-de
             article
