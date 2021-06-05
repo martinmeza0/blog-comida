@@ -12,11 +12,15 @@
 <body>
     <header>
         <div class="contenedor">
-             <nav class="menu">
-                <a href="#" id="btn-acerca-de">Acerca De</a> 
-                <a href="#" id="btn-menu">Menu</a> 
-                <a href="#" id="btn-galeria">Galeria</a> 
-                <a href="#" id="btn-contacto">Contacto</a> 
+            <nav class="menu">
+                <input type="checkbox" id="check">
+                <label for="check" class="checkbtn"><i class="fas fa-bars"></i></label>
+                <ul>
+                    <li><a href="#acerca-de" id="btn-acerca-de">Acerca De</a> </li>
+                    <li><a href="#menu" id="btn-menu">Menu</a></li>
+                    <li><a href="#galeria" id="btn-galeria">Galeria</a></li>
+                    <li><a href="#contacto" id="btn-contacto">Contacto</a></li>
+                </ul>
             </nav>
             <div class="textos">
                  <h1 class="nombre"> 25 <span> Alfajores</span></h1>
@@ -26,12 +30,12 @@
     </header>
 
     <main>
-        <section class="acerca-de" id="acerca-de">
+        <section class="acerca-de">
             <div class="contenedor">
-                 <div class="foto">
+                 <div class="foto" id="acerca-de">
                      <img src="img/acerca-de.jpg" alt="">
                 </div>
-                <article>
+                <article class="informacion">
                      <h3>Acerca De</h3>
                      <p>Somos un pequeño y nuevo emprendimiento dedicados a vender Alfajores artesanales y delicias dulces.</p>
                             
@@ -119,8 +123,8 @@
             </div>
         </section>
                 
-        <section class="carousel">
-            <div class="carousel__contenedor">
+        <section class="carousel" id="galeria">
+            <div class="contenedor">
                 <button aria-label="Anterior" class="carousel__anterior"><i class="fas fa-chevron-left"></i></button>
                 <div class="carousel__galeria">
                     <div class="carousel__foto"><img src="img/1.jpg"></div>
@@ -140,8 +144,8 @@
 
         <section class="contacto" id="contacto">
             <div class="contenedor">
+                <p>¡Contactanos!</p>
                 <a href="https://www.facebook.com/veinticinco.alfajores" class="facebook"><i class="fa fa-facebook"></i></i></a>
-                <p class="whatsapp"><i class="fa fa-whatsapp"></i><span>+542215998824</span></p>
                 <a href="https://instagram.com/25alfajores?igshid=1n8fvxp9mrbzs" class="instagram"><i class="fa fa-instagram"></i></a>
             </div>
         </section>
@@ -150,12 +154,13 @@
     <footer>
         <div class="contenedor">
             <div class="copyright">
-                <p>25Alfajores - Dueño de la pagina - Martin Meza - Desarrollador Web - Todos los derechos reservados 2020
+                <p>25Alfajores - Martin Meza &copy 2020
                 </p>
             </div>
         </div>
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/glider-js@1/glider.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/simple-parallax-js@5.6.1/dist/simpleParallax.min.js"></script>
     <script src="js/app.js"></script>
 </body>
 </html>
