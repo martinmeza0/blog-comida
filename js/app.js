@@ -1,5 +1,7 @@
 window.addEventListener('load', () => {
-    new Glider(document.querySelector('.carousel__galeria'), {
+  //glider.js
+    const carousel = document.querySelector('.carousel__galeria');
+    new Glider (carousel, {
         slidesToShow: 1,
         slidesToScroll: 1,
         draggable: true,
@@ -11,13 +13,11 @@ window.addEventListener('load', () => {
         responsive: [
             {
               // screens greater than >= 775px
-              breakpoint: 800,
+              breakpoint: 768,
               settings: {
                 // Set to `auto` and provide item width to adjust to viewport
                 slidesToShow: 2,
                 slidesToScroll: 2,
-                itemWidth: 100,
-                duration: 0.25
               }
             },{
               // screens greater than >= 1024px
@@ -25,10 +25,30 @@ window.addEventListener('load', () => {
               settings: {
                 slidesToShow: 3,
                 slidesToScroll: 3,
-                itemWidth: 150,
-                duration: 0.25
               }
             }
           ]
+    });
+  // parallax scrolling
+  const titulo = document.getElementsByClassName('textos');
+  const logo = document.getElementsByClassName('foto');
+  const informacion = document.getElementsByClassName('informacion');
+    new simpleParallax(titulo, {
+      orientation: 'down',
+      overflow: true,
+      scale: 1.5,
+
+    });
+    new simpleParallax(logo, {
+      orientation: 'down',
+      overflow: true,
+      scale: 1.5,
+    });
+    new simpleParallax(informacion, {
+      orientation: 'down',
+      overflow: true,
+      scale: 0,
+
+
     });
 });
